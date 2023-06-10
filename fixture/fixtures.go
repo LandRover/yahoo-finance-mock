@@ -8,7 +8,7 @@ const (
 	// YFinOptions are the yfin options responses.
 	YFinOptions ResourceID = "options"
 	// YFinCrumb are the yfin crumb responses.
-	YFinCrumb CrumbID = "crumb"
+	YFinCrumb ResourceID = "crumb"
 	// ServiceYFin is the yfin service.
 	ServiceYFin ServiceID = "yfin"
 )
