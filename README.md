@@ -1,4 +1,4 @@
-# finance-mock [![Build Status](https://travis-ci.org/piquette/finance-mock.svg?branch=master)](https://travis-ci.org/piquette/finance-mock)
+# finance-mock [![Build Status](https://travis-ci.org/LandRover/yahoo-finance-mock.svg?branch=master)](https://travis-ci.org/LandRover/yahoo-finance-mock)
 
 finance-mock is a mock HTTP server that can be used in lieu of various remote financial data sources. The primary purpose of this server is for building test suites for piquette/finance-go that don't have to interact with the real financial data sources, making testing quicker and less prone to unpredictable upstream api errors/changes out of our control.
 
@@ -8,7 +8,7 @@ finance-mock is a mock HTTP server that can be used in lieu of various remote fi
 Get it from the Homebrew tap or download it [from the releases page][releases]:
 
 ``` sh
-brew tap piquette/finance-mock
+brew tap LandRover/yahoo-finance-mock
 brew install finance-mock
 
 # start a finance-mock service at login
@@ -21,7 +21,7 @@ brew upgrade finance-mock
 Or if you have Go installed you can build it:
 
 ``` sh
-go get -u github.com/piquette/finance-mock
+go get -u github.com/LandRover/yahoo-finance-mock
 ```
 
 Run it:
@@ -97,4 +97,4 @@ goreleaser --rm-dist
 ```
 
 [goreleaser]: https://github.com/goreleaser/goreleaser
-[releases]: https://github.com/piquette/finance-mock/releases
+[releases]: https://github.com/LandRover/yahoo-finance-mock/releases
