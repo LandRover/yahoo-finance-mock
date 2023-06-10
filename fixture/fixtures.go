@@ -7,6 +7,8 @@ const (
 	YFinChart ResourceID = "chart"
 	// YFinOptions are the yfin options responses.
 	YFinOptions ResourceID = "options"
+	// YFinCrumb are the yfin crumb responses.
+	YFinCrumb CrumbID = "crumb"
 	// ServiceYFin is the yfin service.
 	ServiceYFin ServiceID = "yfin"
 )
@@ -19,6 +21,9 @@ type ResourceID string
 
 // ServiceID is just an identifier for a service.
 type ServiceID string
+
+// CrumbID is just an identifier for a service.
+type CrumbID string
 
 // Resources alias for resource map.
 type Resources map[ResourceID]interface{}

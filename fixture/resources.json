@@ -1,6 +1,9 @@
 {
   "resources": {
     "yfin": {
+      "crumb": {
+        "crumb": "a1bcd4Efg.h"
+      },
       "quote": {
         "AAPL": {
           "PRE": {
