@@ -8,9 +8,9 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/piquette/finance-mock/fixture"
-	"github.com/piquette/finance-mock/utils"
-	"github.com/piquette/finance-mock/yfin"
+	"github.com/LandRover/yahoo-finance-mock/fixture"
+	"github.com/LandRover/yahoo-finance-mock/utils"
+	"github.com/LandRover/yahoo-finance-mock/yfin"
 )
 
 // YFinService is a service that manages yahoo finance requests.

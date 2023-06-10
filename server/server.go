@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/piquette/finance-mock/fixture"
-	"github.com/piquette/finance-mock/utils"
+	"github.com/LandRover/yahoo-finance-mock/fixture"
+	"github.com/LandRover/yahoo-finance-mock/utils"
 )
 
 const invalidRoute = "Unrecognized request URL (%s: %s)."

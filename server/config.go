@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/piquette/finance-mock/utils"
+	"github.com/LandRover/yahoo-finance-mock/utils"
 )
 
 const (

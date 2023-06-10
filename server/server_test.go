@@ -3,7 +3,7 @@ package server
 import (
 	"testing"
 
-	"github.com/piquette/finance-mock/fixture"
+	"github.com/LandRover/yahoo-finance-mock/fixture"
 	assert "github.com/stretchr/testify/require"
 )
 

@@ -11,7 +11,7 @@ brew:
   github:
     owner: piquette
     name: homebrew-finance-mock
-  homepage: "https://github.com/piquette/finance-mock"
+  homepage: "https://github.com/LandRover/yahoo-finance-mock"
   description: "finance-mock is a mock HTTP server that generates API responses. It can be used instead to make test suites faster and less brittle."
 
   plist: |

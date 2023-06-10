@@ -10,7 +10,7 @@
 #
 
 FROM golang:1.10.2-alpine AS builder
-WORKDIR /go/src/github.com/piquette/finance-mock/
+WORKDIR /go/src/github.com/LandRover/yahoo-finance-mock/
 ADD ./ ./
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o finance-mock .
 
@@ -24,6 +24,6 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o finance-mock .
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /
-COPY --from=builder /go/src/github.com/piquette/finance-mock/finance-mock .
+COPY --from=builder /go/src/github.com/LandRover/yahoo-finance-mock/finance-mock .
 ENTRYPOINT /finance-mock
 EXPOSE 12111

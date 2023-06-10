@@ -12,8 +12,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/piquette/finance-mock/fixture"
-	"github.com/piquette/finance-mock/server"
+	"github.com/LandRover/yahoo-finance-mock/fixture"
+	"github.com/LandRover/yahoo-finance-mock/server"
 	yaml "gopkg.in/yaml.v2"
 )
 
