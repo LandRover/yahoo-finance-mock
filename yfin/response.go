@@ -30,6 +30,9 @@ type ErrorResponse struct {
 	*Response `json:"error"`
 }
 
+// CrumbResponse contains a crumb response msg.
+type CrumbResponse string
+
 // QuoteResponse contains a quote response msg.
 type QuoteResponse struct {
 	*Response `json:"quoteResponse"`
@@ -43,6 +46,16 @@ type ChartResponse struct {
 // OptionsResponse contains a options response msg.
 type OptionsResponse struct {
 	*Response `json:"optionChain"`
+}
+
+// CreateCrumb creates a valid crumb response.
+func CreateCrumb(crumb []interface{}) (int, interface{}) {
+	crumbString, ok := crumb[0].(string)
+	if !ok {
+		return http.StatusInternalServerError, createAPIError(internalErrorInfo, internalErrorDescription)
+	}
+
+	return http.StatusOK, crumbString
 }
 
 // CreateQuote creates a valid quote response.

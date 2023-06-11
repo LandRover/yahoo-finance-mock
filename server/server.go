@@ -149,18 +149,22 @@ func (s *StubServer) writeResponse(w http.ResponseWriter, r *http.Request, start
 	var encodedData []byte
 	var err error
 
-	// Marshal response.
-	// -----------------
-	if !isCurl(r.Header.Get("User-Agent")) {
-		encodedData, err = json.Marshal(&data)
+	// Check if data is a string. If so, write it directly to response.
+	// Otherwise, marshal the data into JSON.
+	if str, ok := data.(string); ok {
+		encodedData = []byte(str)
 	} else {
-		encodedData, err = json.MarshalIndent(&data, "", "  ")
-		encodedData = append(encodedData, '\n')
-	}
-	if err != nil {
-		utils.Log(Verbose, "Error serializing response: %v", err)
-		s.writeResponse(w, r, start, http.StatusInternalServerError, nil)
-		return
+		if !isCurl(r.Header.Get("User-Agent")) {
+			encodedData, err = json.Marshal(&data)
+		} else {
+			encodedData, err = json.MarshalIndent(&data, "", "  ")
+			encodedData = append(encodedData, '\n')
+		}
+		if err != nil {
+			utils.Log(Verbose, "Error serializing response: %v", err)
+			s.writeResponse(w, r, start, http.StatusInternalServerError, nil)
+			return
+		}
 	}
 
 	// Set headers.

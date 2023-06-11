@@ -36,6 +36,10 @@ func (y *YFinService) Handle(req *http.Request, rte *regexp.Regexp) (statusCode 
 		if rte.MatchString(string(p)) {
 			// TODO: validate params properly.
 			switch op.ResourceID {
+			case fixture.YFinCrumb:
+				{
+					return y.crumb(requestData)
+				}
 			case fixture.YFinQuotes:
 				{
 					return y.quote(requestData)
@@ -64,6 +68,18 @@ func (y *YFinService) Handle(req *http.Request, rte *regexp.Regexp) (statusCode 
 
 	utils.Log(Verbose, "Couldn't figure out what yfin resource was requested")
 	return yfin.CreateInternalServerError()
+}
+
+func (y *YFinService) crumb(requestData map[string]interface{}) (statusCode int, responseData interface{}) {
+	utils.Log(Verbose, "Retrieving crumb resource.")
+	crumbs := []interface{}{}
+
+	fixtureCrumb := y.Resources[fixture.YFinCrumb].(map[string]interface{})
+
+	fmt.Println()
+	crumbs = append(crumbs, fixtureCrumb["crumb"])
+
+	return yfin.CreateCrumb(crumbs)
 }
 
 func (y *YFinService) quote(requestData map[string]interface{}) (statusCode int, responseData interface{}) {
